@@ -3,11 +3,10 @@ import pandas as pd
 from ultralytics import YOLO
 import cvzone
 import numpy as np
-from tracker import*
+
 model=YOLO('best.pt')
 
 
-tracker=Tracker()
 def RGB(event, x, y, flags, param):
     if event == cv2.EVENT_MOUSEMOVE :  
         point = [x, y]
