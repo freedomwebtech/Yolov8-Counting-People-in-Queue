@@ -64,16 +64,13 @@ while True:
         y2=int(row[3])
         d=int(row[5])
         c=class_list[d]
-        if 'person' in c:
-            cx=int(x1+x2)//2
-            cy=int(y1+y2)//2
-            w,h=x2-x1,y2-y1
-       
-#           cv2.rectangle(frame,(x3,y3),(x4,y4),(0,255,0),-1)
-
-            cvzone.cornerRect(frame,(x1,y1,w,h),3,2)
-            cv2.circle(frame,(cx,cy),4,(255,0,0),-1)
-            cvzone.putTextRect(frame,f'person',(x1,y1),1,1)
+        cx=int(x1+x2)//2
+        cy=int(y1+y2)//2
+        w,h=x2-x1,y2-y1
+#        cv2.rectangle(frame,(x3,y3),(x4,y4),(0,255,0),-1)
+        cvzone.cornerRect(frame,(x1,y1,w,h),3,2)
+        cv2.circle(frame,(cx,cy),4,(255,0,0),-1)
+        cvzone.putTextRect(frame,f'person',(x1,y1),1,1)
   
         
    
