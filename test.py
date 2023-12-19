@@ -51,9 +51,7 @@ while True:
    
 
 #    print(px)
-    list=[]
-    list1=[]
-    list2=[]
+    
     for index,row in px.iterrows():
 #        print(row)
  
