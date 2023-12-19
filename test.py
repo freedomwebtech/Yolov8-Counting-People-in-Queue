@@ -68,32 +68,18 @@ while True:
             cx=int(x1+x2)//2
             cy=int(y1+y2)//2
             w,h=x2-x1,y2-y1
-            result =cv2.pointPolygonTest(np.array(area1,np.int32),((cx,cy)),False)
-            if result>=0:
-#              cv2.rectangle(frame,(x3,y3),(x4,y4),(0,255,0),-1)
-
-               cvzone.cornerRect(frame,(x1,y1,w,h),3,2)
-               cv2.circle(frame,(cx,cy),4,(255,0,0),-1)
-               cvzone.putTextRect(frame,f'person',(x1,y1),1,1)
-               list1.append(cx)
-           
-        result1=cv2.pointPolygonTest(np.array(area2,np.int32),((cx,cy)),False)
-        if result1>=0:
-#        cv2.rectangle(frame,(x3,y3),(x4,y4),(0,255,0),-1)
-
-           cvzone.cornerRect(frame,(x1,y1,w,h),3,2)
-#        cv2.circle(frame,(cx,cy),4,(255,0,0),-1)
-           cvzone.putTextRect(frame,f'person',(x1,y1),1,1)
-           list2.append(cx)
        
+#           cv2.rectangle(frame,(x3,y3),(x4,y4),(0,255,0),-1)
+
+            cvzone.cornerRect(frame,(x1,y1,w,h),3,2)
+            cv2.circle(frame,(cx,cy),4,(255,0,0),-1)
+            cvzone.putTextRect(frame,f'person',(x1,y1),1,1)
+  
         
    
     cv2.polylines(frame,[np.array(area1,np.int32)],True,(0,0,255),2)
     cv2.polylines(frame,[np.array(area2,np.int32)],True,(0,0,255),2)
-    cr1=(len(list1))
-    cr2=(len(list2))
-    cvzone.putTextRect(frame,f'{cr1}',(50,60),1,1)
-    cvzone.putTextRect(frame,f'{cr2}',(50,160),1,1)
+  
 
     cv2.imshow("RGB", frame)
     if cv2.waitKey(1)&0xFF==27:
